@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      {!showLoading ? (
+      {showLoading ? (
         <LoadPage />
       ) : (
         <>
