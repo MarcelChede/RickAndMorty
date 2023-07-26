@@ -1,0 +1,176 @@
+.App {
+  min-height: 100vh;
+  text-align: center;
+  background-image: url(components/Background.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: black;
+}
+
+.pesquisa {
+  margin-top: 60px;
+}
+
+.App-header {
+  margin-bottom: 101px;
+  padding-top: 38px;
+  padding: auto;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  justify-content: center;
+}
+
+input {
+  border: solid;
+  border: "2px";
+  border-color: white;
+  color: #9f9f9f;
+  background-color: transparent;
+  margin-top: 50px;
+  padding-left: 12px;
+  margin-right: 10px;
+  height: 35px;
+  width: 196px;
+  border-radius: 8px;
+  outline: none
+
+}
+
+button {
+  background-color: transparent;
+  width: 84px;
+  height: 42px;
+  border-color: white;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Nunito';
+  border: solid;
+  font-size: 12px;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+input::placeholder {
+  height: 22px;
+  width: 132px;
+  font-size: 16px;
+  font-family: "Nunito";
+  font-weight: 700;
+}
+
+.Results {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.Card {
+  position: relative;
+  border-radius: 8px;
+  border: 2px solid;
+  width: 224px;
+  height: 224px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+
+}
+
+.Card.Dead {
+  filter: grayscale(100%);
+}
+
+.CardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+  gap: 24px;
+  justify-content: center;
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+
+.CardImage {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.CardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.TextCard {
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-left: 13px;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  margin: 0px;
+  color: #fff;
+  font-family: "Nunito";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  backdrop-filter: blur(10px);
+}
+
+.TextCard p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.CardNameText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CardSpeciesText {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.Card:hover {
+  filter: none;
+  border-color: #cbd736;
+}
+
+.PaginationConfig {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 200px;
+}
+
+.PaginationConfig button {
+  margin: 0px;
+  border: 0px;
+}
+
+.PageLimit {
+  color: #909090;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 45px;
+}
+
+.buttonFooter.selected {
+  color: #cbd736;
+  font-size: 20px;
+  background-color: transparent;
+  font-family: Nunito;
+  cursor: pointer;
+  padding-left: 20px;
+  text-align: center;
+}
+
