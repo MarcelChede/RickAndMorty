@@ -7,6 +7,10 @@
   background-color: black;
 }
 
+.mainContent.hidden {
+  display: none;
+}
+
 .pesquisa {
   margin-top: 60px;
 }

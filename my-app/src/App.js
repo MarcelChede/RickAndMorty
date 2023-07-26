@@ -6,16 +6,16 @@ import LoadPage from "./Loading";
 function App() {
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
+  const [showLoading, setShowLoading] = useState(false);
 
   useEffect(() => {
     console.log("Updated search results:", searchResults);
   }, [searchResults]);
 
   const handleSearch = async (_, page) => {
-    setIsLoading(true);
+    setShowLoading(true);
     console.log("Search clicked. Search text:", searchText);
     try {
       const result = await fetch(
@@ -36,36 +36,39 @@ function App() {
     } catch (e) {
       console.error("Erro ao fazer a requisição:", e);
     }
-    setIsLoading(false);
-  };
 
-  if (isLoading) {
-    return <LoadPage />;
-  }
+    setShowLoading(false);
+  };
 
   return (
     <div className="App">
-      <div className="App-header">
-        <img src={logo} alt="logo" />
-        <div className="pesquisa">
-          <input
-            type="text"
-            placeholder="Search characters"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-          />
-          <button onClick={() => handleSearch()}>Search</button>
-        </div>
-      </div>
+      {!showLoading ? (
+        <LoadPage />
+      ) : (
+        <>
+          <div className="App-header">
+            <img src={logo} alt="logo" />
+            <div className="pesquisa">
+              <input
+                type="text"
+                placeholder="Search characters"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+              <button onClick={() => handleSearch()}>Search</button>
+            </div>
+          </div>
 
-      <Results searchResults={searchResults} />
+          <Results searchResults={searchResults} />
 
-      {searchResults.length > 0 && (
-        <Pagination
-          currentPage={currentPage}
-          totalPage={totalPage}
-          handleSearch={handleSearch}
-        />
+          {searchResults.length > 0 && (
+            <Pagination
+              currentPage={currentPage}
+              totalPage={totalPage}
+              handleSearch={handleSearch}
+            />
+          )}
+        </>
       )}
     </div>
   );
