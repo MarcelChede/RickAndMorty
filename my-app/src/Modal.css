@@ -1,0 +1,122 @@
+.ModalButton {
+    position: absolute;
+    top: 120px;
+    right: 880px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.ModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.ModalCard {
+    color: white;
+    text-align: left;
+    padding: 20px;
+    max-width: 80%;
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.959);
+    display: flex;
+    align-items: flex-start; 
+}
+  
+.ImageContainer {
+    position: relative;
+    flex: 1; 
+    margin-right: 20px;
+    
+}
+  
+.ImageContainer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+  
+.TextOnImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.TextOnImage p {
+    margin: 0;
+}
+  
+.title {
+    color: #cbd736;
+    font-family: Nunito;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.45px;
+    margin-bottom: 5px;
+  }
+  
+  
+.ModalNameText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+  
+.ModalSpeciesText {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+  
+.OriginSubtitle {
+    color: #8c8c8c;
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2px;
+}
+  
+.Sub {
+    color: #FFF;
+    font-family: Nunito;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2px;
+    margin-bottom: 20px;
+}
+  
+.TextModal {
+    background-color: black;
+    padding: 20px;
+}
+  

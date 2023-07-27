@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import logo from "./components/logo.png";
 import LoadPage from "./Loading";
+import ModalCharacter from "./Modal";
 
 function App() {
   const [searchText, setSearchText] = useState("");
@@ -9,6 +10,16 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [showLoading, setShowLoading] = useState(false);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = (character) => {
+    setSelectedCharacter(character);
+  };
+
+  const closeModal = () => {
+    setSelectedCharacter(null);
+  };
 
   useEffect(() => {
     console.log("Updated search results:", searchResults);
@@ -16,12 +27,10 @@ function App() {
 
   const handleSearch = async (_, page) => {
     setShowLoading(true);
-    console.log("Search clicked. Search text:", searchText);
     try {
       const result = await fetch(
         `http://127.0.0.1:5000/characters?name=${encodeURIComponent(
-          searchText
-        )}&page=${encodeURIComponent(page || 1)}`,
+          searchText)}&page=${encodeURIComponent(page || 1)}`,
         {
           method: "GET",
           headers: {
@@ -59,7 +68,13 @@ function App() {
             </div>
           </div>
 
-          <Results searchResults={searchResults} />
+          <Results searchResults={searchResults} openModal={openModal} />
+          {selectedCharacter && (
+            <ModalCharacter
+              character={selectedCharacter}
+              closeModal={closeModal}
+              />
+          )}
 
           {searchResults.length > 0 && (
             <Pagination
@@ -74,7 +89,7 @@ function App() {
   );
 }
 
-const Results = ({ searchResults }) => {
+const Results = ({ searchResults, openModal }) => {
   return (
     <div className="Results">
       <div className="CardGrid">
@@ -82,6 +97,7 @@ const Results = ({ searchResults }) => {
           <div
             className={`Card ${item.status === "Dead" ? "Dead" : ""}`}
             key={item.id}
+            onClick={() => openModal(item)}
           >
             <div className="CardImage">
               <img src={item.image} alt="" />

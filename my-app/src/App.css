@@ -4,11 +4,7 @@
   background-image: url(components/Background.png);
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: black;
-}
-
-.mainContent.hidden {
-  display: none;
+  background-color: rgb(5, 4, 4);
 }
 
 .pesquisa {
