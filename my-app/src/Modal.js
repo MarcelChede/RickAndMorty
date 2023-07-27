@@ -4,13 +4,16 @@ import "./Modal.css";
 const ModalCharacter = ({ character, closeModal }) => {
   return (
     <div className="ModalOverlay" onClick={closeModal}>
-      <div className="ModalButton">
-        <button onClick={closeModal}>Close</button>
-      </div>
-
       <div className="ModalCard">
+        <button className="CloseButton" onClick={closeModal}>
+          Close
+        </button>
+        <div className="ImageBackgroundContainer">
+          <img className="ImageBackground" src={character.image} alt="name" />
+        </div>
         <div className="ImageContainer">
           <img src={character.image} alt="name" />
+
           <div className="TextOnImage">
             <p className="ModalNameText">{character.name}</p>
             <p className="ModalSpeciesText">{character.species}</p>
