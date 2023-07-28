@@ -11,7 +11,6 @@ function App() {
   const [totalPage, setTotalPage] = useState(1);
   const [showLoading, setShowLoading] = useState(false);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = (character) => {
     setSelectedCharacter(character);
