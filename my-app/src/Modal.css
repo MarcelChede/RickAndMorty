@@ -1,7 +1,7 @@
 .CloseButton {
     position: absolute; 
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     background-color: transparent;
     color: white;
     border: none;
@@ -14,8 +14,8 @@
 .ImageBackground {
     filter: blur(65px) brightness(0.6);
     overflow: hidden;
-    width: 441px;
-    height: 759px;
+    width: 401px;
+    height: 729px;
 }
 
 .ImageBackgroundContainer {
@@ -28,8 +28,8 @@
     position: relative;
     flex: 1; 
     margin-right: 150px;
-    margin-left: -500px;   
-    margin-top: 85px; 
+    margin-left: -450px;   
+    margin-top: 70px; 
 }
   
 .ImageContainer img {
@@ -54,7 +54,6 @@
     position: relative; 
     color: white;
     text-align: left;
-    max-width: 80%;
     background-color: black;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.959);
@@ -68,10 +67,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: black;
+    background-color: #1B1B1B;
     padding: 8px;
     color: #fff;
-    font-size: 14px;
     font-weight: 700;
     line-height: 1.2;
     text-align: left;
@@ -95,7 +93,8 @@
     line-height: normal;
     letter-spacing: 8.45px;
     margin-bottom: 5px;
-    margin-top: 100px; 
+    margin-top: 60px; 
+    margin-left: -55px;
   }
   
   
@@ -122,6 +121,7 @@
     font-weight: 400;
     line-height: normal;
     margin-bottom: 2px;
+    margin-left: -55px;
 }
   
 .Sub {
@@ -133,6 +133,7 @@
     line-height: normal;
     margin-top: 2px;
     margin-bottom: 20px;
+    margin-left: -55px;
 }
   
 .TextModal {
@@ -141,3 +142,13 @@
 }
   
 
+.title_text {
+    color: #D3D3D3;
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: -55px;
+    
+}
